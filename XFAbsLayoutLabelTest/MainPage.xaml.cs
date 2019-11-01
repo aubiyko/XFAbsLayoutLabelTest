@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using Xamarin.Forms;
 
 namespace XFAbsLayoutLabelTest
 {
@@ -6,7 +7,7 @@ namespace XFAbsLayoutLabelTest
     {
         public MainPage() => InitializeComponent();
 
-        private void Button_Clicked(object sender, System.EventArgs e)
+        private void Button_Clicked(object sender, EventArgs e)
         {
             stack.Children.Add(new Button()
             {
@@ -16,14 +17,21 @@ namespace XFAbsLayoutLabelTest
             });
         }
 
-        private bool smallText = true;
+        private bool labelSmallText = true,
+            buttonSmallText = true;
 
-        private void Button_Clicked_1(object sender, System.EventArgs e)
+        private void Button_Clicked_1(object sender, EventArgs e)
         {
-            label.Text = smallText ? "Very long Sample Text, Sample Text and Sample Text that should overflow and wrap" : "Sample Text";
-            smallText = !smallText;
+            label.Text = labelSmallText ? "Very long Sample Text, Sample Text and Sample Text that should overflow and wrap" : "Sample Text";
+            labelSmallText = !labelSmallText;
         }
 
-        private void Button_Clicked_2(object sender, System.EventArgs e) => button.HeightRequest = 100;
+        private void Button_Clicked_2(object sender, EventArgs e)
+        {
+            button.Text = buttonSmallText ? "Very long Sample Text, Sample Text and Sample Text that should overflow and wrap" : "Sample Text";
+            buttonSmallText = !buttonSmallText;
+        }
+
+        private void Button_Clicked_3(object sender, EventArgs e) => button.HeightRequest = 100;
     }
 }

@@ -4,8 +4,9 @@
              x:Class="XFAbsLayoutLabelTest.MainPage">
     <StackLayout Spacing="20">
         <Button Text="Add button" Clicked="Button_Clicked"/>
-        <Button Text="Change text" Clicked="Button_Clicked_1"/>
-        <Button Text="Change button size" Clicked="Button_Clicked_2"/>
+        <Button Text="Change label text" Clicked="Button_Clicked_1"/>
+        <Button Text="Change button text" Clicked="Button_Clicked_2"/>
+        <Button Text="Enlarge button" Clicked="Button_Clicked_3"/>
         <Frame CornerRadius="20" Margin="20" BackgroundColor="Green">
             <AbsoluteLayout BackgroundColor="Red">
                 <StackLayout x:Name="stack" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="SizeProportional" Spacing="10" BackgroundColor="Yellow">
